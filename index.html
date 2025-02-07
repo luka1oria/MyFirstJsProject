@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Food </title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="navBar" >
+        <a href="#"><h1 style="font-size: 45px;">GoodFood</h1></a>
+        <ul>
+            <a href="" class="hide"><li>Home</li></a>
+            <a href="./cart.html" class="hide"><li>cart <i class="fa-solid fa-cart-shopping"></i></li></a>
+            <li onclick="showSidebar()" class="show"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+        </ul>
+    </div>
+    <div class="sideBar" >
+        <ul>
+            <a href=""><li>Home</li></a>
+            <a href="./cart.html"><li>cart <i class="fa-solid fa-cart-shopping"></i></li></a>
+            <a href="#" onclick="hideSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+        </ul>
+    </div>
+    <div class="container">
+        <div>
+            <h1 style="color: white;">Fast and efficient, online ordering you must try.</h1>
+        </div>
+    </div>
+    <div class="categories">
+        <h1>Categories </h1>
+        <ul>
+            <button  data-category="All" onclick="getFoodCategoryId('')"><li>All</li></button>
+            <button  data-category="Salads" onclick="getFoodCategoryId('1')"><li>Salads</li></button>
+            <button  data-category="Soups" onclick="getFoodCategoryId('2')"><li>Soups</li></button>
+            <button  data-category="Chicken-Dishes" onclick="getFoodCategoryId('3')"><li>Chicken-Dishes</li></button>
+            <button  data-category="Beef-Dishes" onclick="getFoodCategoryId('4')"><li>Beef-Dishes</li></button>
+            <button  data-category="Seafood-dishes" onclick="getFoodCategoryId('5')"><li>Seafood-dishes</li></button>
+            <button  data-category="Vegetable-Dishes" onclick="getFoodCategoryId('6')"><li>Vegetable-Dishes</li></button>
+            <button  data-category="Bits&Bites" onclick="getFoodCategoryId('7')"><li>Bits&Bites</li></button>
+            <button  data-category="On-The-Side" onclick="getFoodCategoryId('8')"><li>On-The-Side</li></button>
+        </ul>
+    </div>
+    <div class="secondContainer">
+        <form class="filter">
+            <div class="filterHeader">
+                <span>filter</span>
+                <i>&#x1F5D2;</i>
+            </div>
+            <div class="filterOption">
+                <label for="spiciness">Spiciness</label>
+                <input id="spiciness" type="range" class="slider" min="0" max="4" style="color: red;">
+            </div>
+            <div class="filterCheckbox">
+                <input type="checkbox" id="noNuts">
+                <label for="noNuts" style="font-size: 15px;">No Nuts</label>
+            </div>
+            <div class="secondFilterCheckbox">
+                <input type="checkbox" id="vegeterian">
+                <label for="vegeterian" style="font-size: 15px;">Vegeterian Only</label>
+            </div>
+            <div class="filterButtons">
+                <button type="reset" class="resetButton" onclick="getFoodCategoryId('')">RESET</button>
+                <button type="button" class="applyButton" onclick="applyFilter()">APPLY FILTER</button>
+            </div>
+        </form>
+        <div class="cards">
+            <!-- <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <div class="secondFilterCheckbox">
+                    <input type="checkbox" id="vegeterian">
+                    <label for="vegeterian" style="font-size: 15px;">Vegeterian</label>
+                    <input type="checkbox" id="noNuts">
+                <label for="no-nuts" style="font-size: 15px;">Nuts</label>
+                </div>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div> -->
+            <!-- <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+            <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+            <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+            <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+            <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+            <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+            <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+            <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+            <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+            <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+            <div >
+                <img src="./pics/MIT_Food-Diabetes-01_0.jpg" alt="" width="100%" height="100px">
+                <h4>Lorem, ipsum dolor.</h4>
+                <p>spiciness:2</p>
+                <h3>price: 10$</h3>
+                <button>Add to cart</button>
+            </div>
+        </div> -->
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
